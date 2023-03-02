@@ -13,3 +13,18 @@ C:\Users\Public\Documents\National Instruments\NI-DAQ\Examples\DotNET4.5.1\Digit
 C:\Users\Public\Documents\National Instruments\NI-DAQ\Examples\DotNET4.5.1\Digital\Generate Values\WriteDigChan\CS\obj\Debug\WriteDigChan.2013.csproj.CopyComplete
 C:\Users\Public\Documents\National Instruments\NI-DAQ\Examples\DotNET4.5.1\Digital\Generate Values\WriteDigChan\CS\obj\Debug\WriteDigChan.exe
 C:\Users\Public\Documents\National Instruments\NI-DAQ\Examples\DotNET4.5.1\Digital\Generate Values\WriteDigChan\CS\obj\Debug\WriteDigChan.pdb
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\bin\Debug\WriteDigChan.exe.config
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\bin\Debug\WriteDigChan.exe
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\bin\Debug\WriteDigChan.pdb
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\bin\Debug\NationalInstruments.Common.dll
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\bin\Debug\NationalInstruments.NiLmClientDLL.dll
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\bin\Debug\NationalInstruments.MStudioCLM.dll
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\bin\Debug\NationalInstruments.Common.xml
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\obj\Debug\WriteDigChan.2013.csproj.AssemblyReference.cache
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\obj\Debug\WriteDigChan.2013.csproj.SuggestedBindingRedirects.cache
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\obj\Debug\NationalInstruments.Examples.WriteDigChan.MainForm.resources
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\obj\Debug\WriteDigChan.2013.csproj.GenerateResource.cache
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\obj\Debug\WriteDigChan.2013.csproj.CoreCompileInputs.cache
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\obj\Debug\WriteDigChan.2013.csproj.CopyComplete
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\obj\Debug\WriteDigChan.exe
+C:\Users\Meta Suit\Documents\github\myDAQ_digital_IO\obj\Debug\WriteDigChan.pdb

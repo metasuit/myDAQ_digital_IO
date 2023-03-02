@@ -66,10 +66,6 @@ namespace NationalInstruments.Examples.WriteDigChan
     {
         private System.Windows.Forms.CheckBox bit0CheckBox;
         private System.Windows.Forms.CheckBox bit1CheckBox;
-        private System.Windows.Forms.CheckBox bit3CheckBox;
-        private System.Windows.Forms.CheckBox bit4CheckBox;
-        private System.Windows.Forms.CheckBox bit5CheckBox;
-        private System.Windows.Forms.CheckBox bit6CheckBox;
         private System.Windows.Forms.CheckBox bit7CheckBox;
         private System.Windows.Forms.Label dataToWriteLabel;
         private System.Windows.Forms.CheckBox bit2CheckBox;
@@ -77,20 +73,17 @@ namespace NationalInstruments.Examples.WriteDigChan
         private System.Windows.Forms.Label bit0Label;
         private System.Windows.Forms.Label bit1Label;
         private System.Windows.Forms.Label bit2Label;
-        private System.Windows.Forms.Label bit3Label;
-        private System.Windows.Forms.Label bit4Label;
-        private System.Windows.Forms.Label bit5Label;
-        private System.Windows.Forms.Label bit6Label;
         private System.Windows.Forms.Label bit7Label;
         private System.Windows.Forms.Label warningLabel;
         private System.Windows.Forms.Button writeButton;
         private System.Windows.Forms.ComboBox physicalChannelComboBox;
-        
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.Container components = null;
         private Button StopButton;
+        private Button WriteOnce;
         private BackgroundWorker _worker;
 
         public MainForm()
@@ -113,16 +106,16 @@ namespace NationalInstruments.Examples.WriteDigChan
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        protected override void Dispose( bool disposing )
+        protected override void Dispose(bool disposing)
         {
-            if( disposing )
+            if (disposing)
             {
-                if (components != null) 
+                if (components != null)
                 {
                     components.Dispose();
                 }
             }
-            base.Dispose( disposing );
+            base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
@@ -137,29 +130,22 @@ namespace NationalInstruments.Examples.WriteDigChan
             this.channelParamsLabel = new System.Windows.Forms.Label();
             this.bit0CheckBox = new System.Windows.Forms.CheckBox();
             this.bit1CheckBox = new System.Windows.Forms.CheckBox();
-            this.bit3CheckBox = new System.Windows.Forms.CheckBox();
-            this.bit4CheckBox = new System.Windows.Forms.CheckBox();
-            this.bit5CheckBox = new System.Windows.Forms.CheckBox();
-            this.bit6CheckBox = new System.Windows.Forms.CheckBox();
             this.bit7CheckBox = new System.Windows.Forms.CheckBox();
             this.bit2CheckBox = new System.Windows.Forms.CheckBox();
             this.bit0Label = new System.Windows.Forms.Label();
             this.bit1Label = new System.Windows.Forms.Label();
             this.bit2Label = new System.Windows.Forms.Label();
-            this.bit3Label = new System.Windows.Forms.Label();
-            this.bit4Label = new System.Windows.Forms.Label();
-            this.bit5Label = new System.Windows.Forms.Label();
-            this.bit6Label = new System.Windows.Forms.Label();
             this.bit7Label = new System.Windows.Forms.Label();
             this.warningLabel = new System.Windows.Forms.Label();
             this.physicalChannelComboBox = new System.Windows.Forms.ComboBox();
             this.StopButton = new System.Windows.Forms.Button();
+            this.WriteOnce = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dataToWriteLabel
             // 
             this.dataToWriteLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.dataToWriteLabel.Location = new System.Drawing.Point(26, 164);
+            this.dataToWriteLabel.Location = new System.Drawing.Point(54, 164);
             this.dataToWriteLabel.Name = "dataToWriteLabel";
             this.dataToWriteLabel.Size = new System.Drawing.Size(204, 23);
             this.dataToWriteLabel.TabIndex = 4;
@@ -168,7 +154,7 @@ namespace NationalInstruments.Examples.WriteDigChan
             // writeButton
             // 
             this.writeButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.writeButton.Location = new System.Drawing.Point(38, 281);
+            this.writeButton.Location = new System.Drawing.Point(30, 281);
             this.writeButton.Name = "writeButton";
             this.writeButton.Size = new System.Drawing.Size(128, 35);
             this.writeButton.TabIndex = 0;
@@ -187,7 +173,7 @@ namespace NationalInstruments.Examples.WriteDigChan
             // bit0CheckBox
             // 
             this.bit0CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bit0CheckBox.Location = new System.Drawing.Point(26, 199);
+            this.bit0CheckBox.Location = new System.Drawing.Point(58, 199);
             this.bit0CheckBox.Name = "bit0CheckBox";
             this.bit0CheckBox.Size = new System.Drawing.Size(25, 23);
             this.bit0CheckBox.TabIndex = 6;
@@ -196,52 +182,16 @@ namespace NationalInstruments.Examples.WriteDigChan
             // bit1CheckBox
             // 
             this.bit1CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bit1CheckBox.Location = new System.Drawing.Point(64, 199);
+            this.bit1CheckBox.Location = new System.Drawing.Point(89, 199);
             this.bit1CheckBox.Name = "bit1CheckBox";
             this.bit1CheckBox.Size = new System.Drawing.Size(26, 23);
             this.bit1CheckBox.TabIndex = 8;
             this.bit1CheckBox.Text = "Line1";
             // 
-            // bit3CheckBox
-            // 
-            this.bit3CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bit3CheckBox.Location = new System.Drawing.Point(141, 199);
-            this.bit3CheckBox.Name = "bit3CheckBox";
-            this.bit3CheckBox.Size = new System.Drawing.Size(25, 23);
-            this.bit3CheckBox.TabIndex = 12;
-            this.bit3CheckBox.Text = "Line3";
-            // 
-            // bit4CheckBox
-            // 
-            this.bit4CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bit4CheckBox.Location = new System.Drawing.Point(179, 199);
-            this.bit4CheckBox.Name = "bit4CheckBox";
-            this.bit4CheckBox.Size = new System.Drawing.Size(26, 23);
-            this.bit4CheckBox.TabIndex = 14;
-            this.bit4CheckBox.Text = "Line4";
-            // 
-            // bit5CheckBox
-            // 
-            this.bit5CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bit5CheckBox.Location = new System.Drawing.Point(218, 199);
-            this.bit5CheckBox.Name = "bit5CheckBox";
-            this.bit5CheckBox.Size = new System.Drawing.Size(25, 23);
-            this.bit5CheckBox.TabIndex = 16;
-            this.bit5CheckBox.Text = "Line5";
-            // 
-            // bit6CheckBox
-            // 
-            this.bit6CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bit6CheckBox.Location = new System.Drawing.Point(256, 199);
-            this.bit6CheckBox.Name = "bit6CheckBox";
-            this.bit6CheckBox.Size = new System.Drawing.Size(26, 23);
-            this.bit6CheckBox.TabIndex = 18;
-            this.bit6CheckBox.Text = "Line6";
-            // 
             // bit7CheckBox
             // 
             this.bit7CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bit7CheckBox.Location = new System.Drawing.Point(294, 199);
+            this.bit7CheckBox.Location = new System.Drawing.Point(238, 199);
             this.bit7CheckBox.Name = "bit7CheckBox";
             this.bit7CheckBox.Size = new System.Drawing.Size(26, 23);
             this.bit7CheckBox.TabIndex = 20;
@@ -250,7 +200,7 @@ namespace NationalInstruments.Examples.WriteDigChan
             // bit2CheckBox
             // 
             this.bit2CheckBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.bit2CheckBox.Location = new System.Drawing.Point(102, 199);
+            this.bit2CheckBox.Location = new System.Drawing.Point(121, 199);
             this.bit2CheckBox.Name = "bit2CheckBox";
             this.bit2CheckBox.Size = new System.Drawing.Size(26, 23);
             this.bit2CheckBox.TabIndex = 10;
@@ -258,7 +208,7 @@ namespace NationalInstruments.Examples.WriteDigChan
             // 
             // bit0Label
             // 
-            this.bit0Label.Location = new System.Drawing.Point(26, 234);
+            this.bit0Label.Location = new System.Drawing.Point(58, 234);
             this.bit0Label.Name = "bit0Label";
             this.bit0Label.Size = new System.Drawing.Size(25, 23);
             this.bit0Label.TabIndex = 5;
@@ -266,7 +216,7 @@ namespace NationalInstruments.Examples.WriteDigChan
             // 
             // bit1Label
             // 
-            this.bit1Label.Location = new System.Drawing.Point(64, 234);
+            this.bit1Label.Location = new System.Drawing.Point(89, 234);
             this.bit1Label.Name = "bit1Label";
             this.bit1Label.Size = new System.Drawing.Size(26, 23);
             this.bit1Label.TabIndex = 7;
@@ -274,51 +224,19 @@ namespace NationalInstruments.Examples.WriteDigChan
             // 
             // bit2Label
             // 
-            this.bit2Label.Location = new System.Drawing.Point(102, 234);
+            this.bit2Label.Location = new System.Drawing.Point(121, 234);
             this.bit2Label.Name = "bit2Label";
             this.bit2Label.Size = new System.Drawing.Size(26, 23);
             this.bit2Label.TabIndex = 9;
             this.bit2Label.Text = "2";
             // 
-            // bit3Label
-            // 
-            this.bit3Label.Location = new System.Drawing.Point(141, 234);
-            this.bit3Label.Name = "bit3Label";
-            this.bit3Label.Size = new System.Drawing.Size(25, 23);
-            this.bit3Label.TabIndex = 11;
-            this.bit3Label.Text = "3";
-            // 
-            // bit4Label
-            // 
-            this.bit4Label.Location = new System.Drawing.Point(179, 234);
-            this.bit4Label.Name = "bit4Label";
-            this.bit4Label.Size = new System.Drawing.Size(26, 23);
-            this.bit4Label.TabIndex = 13;
-            this.bit4Label.Text = "4";
-            // 
-            // bit5Label
-            // 
-            this.bit5Label.Location = new System.Drawing.Point(218, 234);
-            this.bit5Label.Name = "bit5Label";
-            this.bit5Label.Size = new System.Drawing.Size(25, 23);
-            this.bit5Label.TabIndex = 15;
-            this.bit5Label.Text = "5";
-            // 
-            // bit6Label
-            // 
-            this.bit6Label.Location = new System.Drawing.Point(256, 234);
-            this.bit6Label.Name = "bit6Label";
-            this.bit6Label.Size = new System.Drawing.Size(26, 23);
-            this.bit6Label.TabIndex = 17;
-            this.bit6Label.Text = "6";
-            // 
             // bit7Label
             // 
-            this.bit7Label.Location = new System.Drawing.Point(294, 234);
+            this.bit7Label.Location = new System.Drawing.Point(212, 234);
             this.bit7Label.Name = "bit7Label";
-            this.bit7Label.Size = new System.Drawing.Size(26, 23);
+            this.bit7Label.Size = new System.Drawing.Size(79, 23);
             this.bit7Label.TabIndex = 19;
-            this.bit7Label.Text = "7";
+            this.bit7Label.Text = "ON/OFF";
             // 
             // warningLabel
             // 
@@ -328,6 +246,7 @@ namespace NationalInstruments.Examples.WriteDigChan
             this.warningLabel.Size = new System.Drawing.Size(307, 47);
             this.warningLabel.TabIndex = 3;
             this.warningLabel.Text = "You must specify eight lines in the channel string";
+            this.warningLabel.Click += new System.EventHandler(this.warningLabel_Click);
             // 
             // physicalChannelComboBox
             // 
@@ -347,27 +266,30 @@ namespace NationalInstruments.Examples.WriteDigChan
             this.StopButton.UseVisualStyleBackColor = true;
             this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
+            // WriteOnce
+            // 
+            this.WriteOnce.Location = new System.Drawing.Point(194, 157);
+            this.WriteOnce.Name = "WriteOnce";
+            this.WriteOnce.Size = new System.Drawing.Size(109, 34);
+            this.WriteOnce.TabIndex = 22;
+            this.WriteOnce.Text = "Write Once";
+            this.WriteOnce.UseVisualStyleBackColor = true;
+            this.WriteOnce.Click += new System.EventHandler(this.WriteOnce_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(8, 19);
             this.ClientSize = new System.Drawing.Size(370, 348);
+            this.Controls.Add(this.WriteOnce);
             this.Controls.Add(this.StopButton);
             this.Controls.Add(this.physicalChannelComboBox);
             this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.bit7Label);
-            this.Controls.Add(this.bit6Label);
-            this.Controls.Add(this.bit5Label);
-            this.Controls.Add(this.bit4Label);
-            this.Controls.Add(this.bit3Label);
             this.Controls.Add(this.bit2Label);
             this.Controls.Add(this.bit1Label);
             this.Controls.Add(this.bit0Label);
             this.Controls.Add(this.bit0CheckBox);
             this.Controls.Add(this.bit1CheckBox);
-            this.Controls.Add(this.bit3CheckBox);
-            this.Controls.Add(this.bit4CheckBox);
-            this.Controls.Add(this.bit5CheckBox);
-            this.Controls.Add(this.bit6CheckBox);
             this.Controls.Add(this.bit7CheckBox);
             this.Controls.Add(this.channelParamsLabel);
             this.Controls.Add(this.writeButton);
@@ -388,14 +310,14 @@ namespace NationalInstruments.Examples.WriteDigChan
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main() 
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.DoEvents();
             Application.Run(new MainForm());
         }
 
-        
+
 
         private void WriteButton_Click(object sender, System.EventArgs e)
         {
@@ -426,8 +348,8 @@ namespace NationalInstruments.Examples.WriteDigChan
             }
         }
 
-        private void Worker_DoWork(object sender, DoWorkEventArgs e)
-            //this method is executed on the worker thread
+        private async void Worker_DoWork(object sender, DoWorkEventArgs e)
+        //this method is executed on the worker thread
         {
             //Loop indefinitely until the asynchronous operation is cancelled
             while (true)
@@ -451,9 +373,9 @@ namespace NationalInstruments.Examples.WriteDigChan
                             digitalWriteTask.DOChannels.CreateChannel(physicalChannelComboBox.Text, "",
                             ChannelLineGrouping.OneChannelForAllLines);
                         }));
-                        
 
-                        
+
+
                         bool[] dataArray = new bool[8];
                         dataArray[7] = true;
 
@@ -500,6 +422,7 @@ namespace NationalInstruments.Examples.WriteDigChan
 
                             //Sleep = proof of concept --> ist ineffiziente Lösung (CPU macht nix in der Zeit), chatGPT nach besserer Lösung fragen
                             Thread.Sleep(5);
+                            
                         }
                         //Max' Code End
 
@@ -534,7 +457,7 @@ namespace NationalInstruments.Examples.WriteDigChan
         }
 
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-            // this method is called when the worker has completed its task or has been cancelled
+        // this method is called when the worker has completed its task or has been cancelled
         {
             if (e.Cancelled)
             {
@@ -548,6 +471,42 @@ namespace NationalInstruments.Examples.WriteDigChan
             {
                 Console.WriteLine("The task was completed successfully");
             }
+        }
+
+        private void warningLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WriteOnce_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                // create a new task for digital write operations
+                using (Task digitalWriteTask = new Task())
+                {
+                    digitalWriteTask.DOChannels.CreateChannel(physicalChannelComboBox.Text, "",
+                            ChannelLineGrouping.OneChannelForAllLines);
+
+                    bool[] dataArray = new bool[8];
+                    dataArray[0] = bit0CheckBox.Checked;
+                    dataArray[1] = bit1CheckBox.Checked;
+                    dataArray[2] = bit2CheckBox.Checked;
+                    dataArray[7] = bit7CheckBox.Checked;
+                    DigitalSingleChannelWriter writer = new DigitalSingleChannelWriter(digitalWriteTask.Stream);
+                    writer.WriteSingleSampleMultiLine(true, dataArray);
+                }
+            }
+            catch (DaqException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+
         }
     }
 }

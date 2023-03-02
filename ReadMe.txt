@@ -1,11 +1,11 @@
-Example Title:           ReadDigChan
+Example Title:           WriteDigChan
 
-Example Filename:        ReadDigChan.sln
+Example Filename:        WriteDigChan.sln
 
-Category:                DI
+Category:                DO
 
-Description:             This example demonstrates how to read values from one or
-                         more digital input channels.
+Description:             This example demonstrates how to write values to a
+                         digital output channel.
 
 Software Group:          Measurement Studio
 

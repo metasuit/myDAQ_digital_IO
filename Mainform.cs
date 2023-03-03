@@ -84,6 +84,7 @@ namespace NationalInstruments.Examples.WriteDigChan
         private System.ComponentModel.Container components = null;
         private Button StopButton;
         private Button WriteOnce;
+        private NumericUpDown delay;
         private BackgroundWorker _worker;
 
         public MainForm()
@@ -140,6 +141,8 @@ namespace NationalInstruments.Examples.WriteDigChan
             this.physicalChannelComboBox = new System.Windows.Forms.ComboBox();
             this.StopButton = new System.Windows.Forms.Button();
             this.WriteOnce = new System.Windows.Forms.Button();
+            this.delay = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.delay)).BeginInit();
             this.SuspendLayout();
             // 
             // dataToWriteLabel
@@ -276,10 +279,29 @@ namespace NationalInstruments.Examples.WriteDigChan
             this.WriteOnce.UseVisualStyleBackColor = true;
             this.WriteOnce.Click += new System.EventHandler(this.WriteOnce_Click);
             // 
+            // delay
+            // 
+            this.delay.Location = new System.Drawing.Point(183, 343);
+            this.delay.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.delay.Name = "delay";
+            this.delay.Size = new System.Drawing.Size(120, 26);
+            this.delay.TabIndex = 23;
+            this.delay.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.delay.ValueChanged += new System.EventHandler(this.delay_ValueChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(8, 19);
-            this.ClientSize = new System.Drawing.Size(370, 348);
+            this.ClientSize = new System.Drawing.Size(365, 392);
+            this.Controls.Add(this.delay);
             this.Controls.Add(this.WriteOnce);
             this.Controls.Add(this.StopButton);
             this.Controls.Add(this.physicalChannelComboBox);
@@ -301,6 +323,7 @@ namespace NationalInstruments.Examples.WriteDigChan
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Write Dig Channel";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.delay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,7 +444,8 @@ namespace NationalInstruments.Examples.WriteDigChan
                             */
 
                             //Sleep = proof of concept --> ist ineffiziente Lösung (CPU macht nix in der Zeit), chatGPT nach besserer Lösung fragen
-                            Thread.Sleep(5);
+                            int sleeptime = (int)delay.Value;
+                            Thread.Sleep(sleeptime);
                             
                         }
                         //Max' Code End
@@ -506,6 +530,11 @@ namespace NationalInstruments.Examples.WriteDigChan
             {
                 Cursor.Current = Cursors.Default;
             }
+
+        }
+
+        private void delay_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

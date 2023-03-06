@@ -57,6 +57,7 @@ using System.Data;
 using NationalInstruments.DAQmx;
 using System.Threading;
 
+
 namespace NationalInstruments.Examples.WriteDigChan
 {
     /// <summary>
@@ -260,7 +261,7 @@ namespace NationalInstruments.Examples.WriteDigChan
             this.physicalChannelComboBox.Name = "physicalChannelComboBox";
             this.physicalChannelComboBox.Size = new System.Drawing.Size(294, 28);
             this.physicalChannelComboBox.TabIndex = 2;
-            this.physicalChannelComboBox.Text = "myDAQ2/Port0/line0:7";
+            this.physicalChannelComboBox.Text = "myDAQ1/Port0/line0:7";
             // 
             // StopButton
             // 
@@ -298,14 +299,14 @@ namespace NationalInstruments.Examples.WriteDigChan
             this.SleepTimeValue.AutoSize = true;
             this.SleepTimeValue.Location = new System.Drawing.Point(145, 371);
             this.SleepTimeValue.Name = "SleepTimeValue";
-            this.SleepTimeValue.Size = new System.Drawing.Size(27, 30);
+            this.SleepTimeValue.Size = new System.Drawing.Size(18, 20);
             this.SleepTimeValue.TabIndex = 25;
             this.SleepTimeValue.Text = "0";
             // 
             // MainForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(8, 19);
-            this.ClientSize = new System.Drawing.Size(519, 448);
+            this.ClientSize = new System.Drawing.Size(349, 402);
             this.Controls.Add(this.SleepTimeValue);
             this.Controls.Add(this.SleepTimeBar);
             this.Controls.Add(this.WriteOnce);
@@ -454,6 +455,7 @@ namespace NationalInstruments.Examples.WriteDigChan
                             //int sleeptime = (int)delay.Value;
                             //int sleeptime = (int)SleepTimeBar.Value;
                             Thread.Sleep(sleeptime);
+                            
                             
                         }
                         //Max' Code End

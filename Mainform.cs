@@ -56,7 +56,7 @@ using System.Windows.Forms;
 using System.Data;
 using NationalInstruments.DAQmx;
 using System.Threading;
-
+using System.Diagnostics;
 
 namespace NationalInstruments.Examples.WriteDigChan
 {
@@ -382,6 +382,8 @@ namespace NationalInstruments.Examples.WriteDigChan
         private async void Worker_DoWork(object sender, DoWorkEventArgs e)
         //this method is executed on the worker thread
         {
+            //Create a stopwatch to measure the elapsed time
+            Stopwatch stopwatch = new Stopwatch();
             //Loop indefinitely until the asynchronous operation is cancelled
             while (true)
             {
@@ -409,6 +411,9 @@ namespace NationalInstruments.Examples.WriteDigChan
 
                         bool[] dataArray = new bool[8];
                         dataArray[7] = true;
+
+                        //Start the stopwatch
+                        stopwatch.Restart();
 
                         for (int i = 0; i < 8; i++)
                         {
@@ -454,10 +459,11 @@ namespace NationalInstruments.Examples.WriteDigChan
                             //Sleep = proof of concept --> ist ineffiziente Lösung (CPU macht nix in der Zeit), chatGPT nach besserer Lösung fragen
                             //int sleeptime = (int)delay.Value;
                             //int sleeptime = (int)SleepTimeBar.Value;
-                            Thread.Sleep(sleeptime);
-                            
-                            
+                            Thread.Sleep(sleeptime);                                                      
                         }
+                        stopwatch.Stop();
+                        TimeSpan elapsedTime = stopwatch.Elapsed;
+                        Console.WriteLine($"Elapsed time for loop: {elapsedTime}");
                         //Max' Code End
 
                         //Original Code
